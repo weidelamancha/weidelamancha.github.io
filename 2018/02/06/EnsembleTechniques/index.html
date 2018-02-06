@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.   Homogeneous ensemble 1234567graph LR	A((x))">
+<meta name="description" content="IntroductionThis post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.">
 <meta name="keywords" content="technique">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EnsembleTechniques">
+<meta property="og:title" content="Ensemble Techniques">
 <meta property="og:url" content="http://yoursite.com/2018/02/06/EnsembleTechniques/index.html">
 <meta property="og:site_name" content="Studies of Data">
-<meta property="og:description" content="This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.   Homogeneous ensemble 1234567graph LR	A((x))">
+<meta property="og:description" content="IntroductionThis post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-06T14:12:41.000Z">
+<meta property="og:updated_time" content="2018-02-06T15:11:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EnsembleTechniques">
-<meta name="twitter:description" content="This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.   Homogeneous ensemble 1234567graph LR	A((x))">
+<meta name="twitter:title" content="Ensemble Techniques">
+<meta name="twitter:description" content="IntroductionThis post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.">
 
 
 
@@ -125,8 +125,7 @@
 
 
 
-
-  <title>EnsembleTechniques | Studies of Data</title>
+  <title>Ensemble Techniques | Studies of Data</title>
   
 
 
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">EnsembleTechniques</h1>
+          <h1 class="post-title" itemprop="name headline">Ensemble Techniques</h1>
         
 
         <div class="post-meta">
@@ -300,13 +299,14 @@
       
 
       
-        <p>This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning. </p>
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning. </p>
+<a id="more"></a>
 <ul>
-<li><p>Homogeneous ensemble</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 1|C[base learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 1|D[base learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Heterogeneous ensemble</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base/individual/component learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 2|C[base/individual/component learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 3|D[base/individual/component learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
+<li>Homogeneous ensemble</li>
+</ul>
+<p>graph LR<br>    A((x)) –&gt; |base learning algorithm 1|B[base learner 1]<br>    A –&gt; |base learning algorithm 1|C[base learner 2]<br>    A –&gt; |base learning algorithm 1|D[base learner 3]<br>    B –&gt; E((y))<br>    C –&gt; E<br>    D –&gt; E</p>
+<ul>
+<li>Heterogeneous ensemble<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base/individual/component learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 2|C[base/individual/component learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 3|D[base/individual/component learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="Core-knowledge-of-ensemble-methods"><a href="#Core-knowledge-of-ensemble-methods" class="headerlink" title="Core knowledge of ensemble methods"></a>Core knowledge of ensemble methods</h1><p><strong>Boosting</strong></p>
@@ -346,15 +346,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/06/HelloWorld/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/06/HelloWorld/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -477,7 +477,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-knowledge-of-ensemble-methods"><span class="nav-number">1.</span> <span class="nav-text">Core knowledge of ensemble methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advanced-knowledge-of-ensemble-methods"><span class="nav-number">2.</span> <span class="nav-text">Advanced knowledge of ensemble methods</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-knowledge-of-ensemble-methods"><span class="nav-number">2.</span> <span class="nav-text">Core knowledge of ensemble methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advanced-knowledge-of-ensemble-methods"><span class="nav-number">3.</span> <span class="nav-text">Advanced knowledge of ensemble methods</span></a></li></ol></div>
             
 
           </div>

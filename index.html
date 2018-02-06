@@ -157,7 +157,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">A blog about data scicence techniques and their applications in business and bio/medical research</p>
+        <p class="site-subtitle">A blog about data scicence techniques and applications in business and bio/medical research</p>
       
   </div>
 
@@ -215,6 +215,141 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/06/EnsembleTechniques/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="weidelamancha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Studies of Data">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/06/EnsembleTechniques/" itemprop="url">EnsembleTechniques</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-06T00:00:00+08:00">
+                2018-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning. </p>
+<ul>
+<li><p>Homogeneous ensemble</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 1|C[base learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 1|D[base learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Heterogeneous ensemble</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base/individual/component learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 2|C[base/individual/component learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 3|D[base/individual/component learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="Core-knowledge-of-ensemble-methods"><a href="#Core-knowledge-of-ensemble-methods" class="headerlink" title="Core knowledge of ensemble methods"></a>Core knowledge of ensemble methods</h1><p><strong>Boosting</strong></p>
+<p><strong>Bagging:</strong><br>Random Forest and some other random tree ensembles</p>
+<p><strong>Combination methods</strong><br>Averaging and voting<br>Stacking method<br>Mixture of experts</p>
+<p><strong>Ensemble diversity</strong><br>error-ambiguity and bias-variance decompositions</p>
+<h1 id="Advanced-knowledge-of-ensemble-methods"><a href="#Advanced-knowledge-of-ensemble-methods" class="headerlink" title="Advanced knowledge of ensemble methods"></a>Advanced knowledge of ensemble methods</h1><p><strong>Ensemble pruning</strong></p>
+<p><strong>Clustering ensembles</strong></p>
+<p><strong>Ensemble methods in semi-supervised learning, active learning, cost-sensitive learning and class-imbalance learning, as well as comprehensibility enhancement.</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -382,7 +517,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -390,6 +525,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>

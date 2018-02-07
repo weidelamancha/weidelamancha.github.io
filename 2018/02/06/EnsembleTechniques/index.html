@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Studies of Data">
 <meta property="og:description" content="Introduction This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-07T04:04:45.000Z">
+<meta property="og:updated_time" content="2018-02-07T04:19:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ensemble Techniques">
 <meta name="twitter:description" content="Introduction This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.">
@@ -306,20 +306,11 @@
 <p>This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning. </p>
 <a id="more"></a>
 <ul>
-<li>Homogeneous ensemble</li>
-</ul>
-<div class="mermaid">
-  graph LR
-	A((x)) --> |base learning algorithm 1|B[base learner 1]
-	A --> |base learning algorithm 1|C[base learner 2]
-	A --> |base learning algorithm 1|D[base learner 3]	
-	B --> E((y))
-	C --> E
-	D --> E
-</div>
-
-<ul>
-<li>Heterogeneous ensemble<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base/individual/component learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 2|C[base/individual/component learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 3|D[base/individual/component learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
+<li><p>Homogeneous ensemble</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% mermaid %&#125;</span><br><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 1|C[base learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 1|D[base learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br><span class="line">&#123;% endmermaid %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Heterogeneous ensemble</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base/individual/component learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 2|C[base/individual/component learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 3|D[base/individual/component learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="Core-knowledge-of-ensemble-methods"><a href="#Core-knowledge-of-ensemble-methods" class="headerlink" title="Core knowledge of ensemble methods"></a>Core knowledge of ensemble methods</h1><hr>

@@ -131,8 +131,9 @@
 
 
 
+  <!-- 我加的：
   <meta charset="utf-8">
-  <link rel="stylesheet" href="mermaid.min.css">
+  <link rel="stylesheet" href="mermaid.min.css"> -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -321,15 +322,60 @@
 
       
         
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><hr>
+          
+            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><hr>
 <p>This post aims to elucidate ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning. </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/06/EnsembleTechniques/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<ul>
+<li><p>Homogeneous ensemble</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 1|C[base learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 1|D[base learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Heterogeneous ensemble</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((x)) --&gt; |base learning algorithm 1|B[base/individual/component learner 1]</span><br><span class="line">	A --&gt; |base learning algorithm 2|C[base/individual/component learner 2]</span><br><span class="line">	A --&gt; |base learning algorithm 3|D[base/individual/component learner 3]	</span><br><span class="line">	B --&gt; E((y))</span><br><span class="line">	C --&gt; E</span><br><span class="line">	D --&gt; E</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>To get a good ensemble, it is generally believed that the base learners should be as accurate as possible, and as diverse as possible. Ensemble learning can be used online by updating weak learners and has been applied to object tracking and intrusion detection etc.</p>
+<p><br></p>
+<h1 id="Core-knowledge-of-ensemble-methods"><a href="#Core-knowledge-of-ensemble-methods" class="headerlink" title="Core knowledge of ensemble methods"></a>Core knowledge of ensemble methods</h1><hr>
+<h3 id="1-Boosting"><a href="#1-Boosting" class="headerlink" title="1. Boosting"></a>1. Boosting</h3><p>Boosting works by training a set of learners <strong>sequentially</strong> and combining them for prediction, where the later learners focus more on the mistakes of the earlier learners.</p>
+<p>General boosting procedure:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((D1)) --&gt; B[h1] </span><br><span class="line">	B --&gt; C&#123;e1, a1&#125;</span><br><span class="line">	C --&gt; D((D2))</span><br><span class="line">	D --&gt; E[h2]</span><br><span class="line">	E --&gt; F&#123;e2, a2&#125;</span><br><span class="line">	F --&gt; G((D3))</span><br><span class="line">	G --&gt; H[h3]</span><br><span class="line">	H --&gt; I&#123;e3, a3&#125;</span><br><span class="line">	I --&gt; J((D4))</span><br><span class="line">	B --&gt; K[H]</span><br><span class="line">	E --&gt; K</span><br><span class="line">	H --&gt; K</span><br></pre></td></tr></table></figure>
+<p><em>Figure legend:<br>D: sample distribution; h: classifier; e: classification error of h; a: weight of h; H: ensembled classifier</em></p>
+<h4 id="Adaboost-algorithm-Freund-and-Schapire-1997"><a href="#Adaboost-algorithm-Freund-and-Schapire-1997" class="headerlink" title="Adaboost algorithm [Freund and Schapire, 1997]:"></a>Adaboost algorithm [Freund and Schapire, 1997]:</h4><p>AdaBoost algorithm was designed as a classification algorithm for minimizing the misclassification error. It can be interpreted as a stagewise estimation procedure for fitting an additive logistic regression model.</p>
+<ul>
+<li>If base learning algorithm can learn with specified distributions, it is often accomplished by <strong><em>re-weighting</em></strong>: weighting training examples in each round according to the sample distribution.<br><strong>Pro:</strong> provides an option for <em>Boosting with restart</em> as a sanity check to ensure that the current base learner is better than random guess.</li>
+<li>If not, it can be accomplished by <strong><em>re-sampling</em></strong>: sampling training examples in each round according to the desired distribution.<br><strong>Pro:</strong> especially for multi-class tasks, the base learner that cannot pass the sanity check can be removed, and a new data sample can be generated on which a new base learner will be trained; in this way, the AdaBoost procedure can avoid the problem of early-termination far before the specified number of rounds.</li>
+</ul>
+<p>Theoretically, it is necessary to constrain the complexity of base learners as well as the number of learning rounds; otherwise AdaBoost will overfit. However, <strong>empirically it often doesn’t overfit</strong>, as test error often tends to decrease even after the training error reaches zero. </p>
+<p>The bound of <strong><em>generalization error</em></strong> is relevant to the <strong><em>margin</em></strong> (the margin of the classifier h on the instance x, or in other words, the distance of x to the classification hyperplane of h) , the number of learning rounds and the complexity of base learners. Margin distribution is believed crucial to the generalization performance of AdaBoost. Average margin or median margin are suggested to be considered as measures to compare margin distributions.</p>
+<p>Variants of AdaBoost developed by considering different <strong><em>surrogate loss functions</em></strong>:</p>
+<ul>
+<li><strong><em>LogitBoost</em></strong> [Friedman et al., 2000] considers the log loss</li>
+<li><strong><em>L2Boost</em></strong> [Bu ̈hlmann and Yu, 2003] considers the l2 loss</li>
+</ul>
+<p>Variants of AdaBoost for multi-class classification:</p>
+<ul>
+<li><strong><em>AdaBoost.M1</em></strong> [Freund and Schapire, 1997] in which base learners are multi-class learners instead of binary classifiers. This algorithm could not use binary classifiers, and requires every base learner has less than 1/2 multi-class 0/1-loss</li>
+<li><strong><em>SAMME</em></strong> [Zhu et al., 2006], an improvement over AdaBoost.M1 with modifications of weight calculation</li>
+<li><strong><em>AdaBoost.MH</em></strong> [Schapire and Singer, 1999] follows the one-versus-rest strategy. The real-value output H(x) rather than the crisp classification of<br>each AdaBoost classifier is used to identify the most probable class</li>
+<li><strong><em>AdaBoost.M2</em></strong> [Freund and Schapire, 1997] follows the one-versus-one strategy, which minimizes a pseudo-loss</li>
+<li><strong><em>AdaBoost.MR</em></strong> [Schapire and Singer, 1999] generalizes AdaBoost.M2 and minimizes a ranking loss motivated by the fact that the highest ranked class is more likely to be the correct class<br><del>Binary classifiers obtained by one-versus-one decomposition can also be aggregated by voting, pairwise coupling, directed acyclic graph, etc.</del></li>
+</ul>
+<p>AdaBoost algorithm has been observed to be very sensitive to <strong>noise</strong>. Because of AdaBoost’s exponential loss function, if an instance were not classified as its given label, the weight of this instance will increase drastically so that the instance to be classified according to the given label in the next round. Variants of AdaBoost are developed to increase noise tolerance by modifying weight updating rule for D:</p>
+<ul>
+<li><strong><em>MadaBoost</em></strong> [Domingo and Watanabe, 2000] sets an upper limit on the weights</li>
+<li><strong><em>FilterBoost</em></strong> [Bradley and Schapire, 2008] does not employ the exponential loss function used in AdaBoost, but adopts the log loss function. The increase of the instance weights is upper bounded by 1, similar to the weight depressing in MadaBoost, but smoother</li>
+<li>(<strong><em>BBM</em></strong> (Boosting-By-Majority) [Freund, 1995] -&gt; <strong><em>BrownBoost</em></strong> [Freund, 2001] -&gt; ) <strong><em>RobustBoost</em></strong> [Freund, 2009] boosts the normalized classification margin</li>
+</ul>
+<p><strong>Bagging:</strong><br>Random Forest and some other random tree ensembles</p>
+<p><strong>Combination methods</strong><br>Averaging and voting<br>Stacking method<br>Mixture of experts</p>
+<p><strong>Ensemble diversity</strong><br>error-ambiguity and bias-variance decompositions</p>
+<p><br></p>
+<h1 id="Advanced-knowledge-of-ensemble-methods"><a href="#Advanced-knowledge-of-ensemble-methods" class="headerlink" title="Advanced knowledge of ensemble methods"></a>Advanced knowledge of ensemble methods</h1><hr>
+<p><strong>Ensemble pruning</strong></p>
+<p><strong>Clustering ensembles</strong></p>
+<p><strong>Ensemble methods in semi-supervised learning, active learning, cost-sensitive learning and class-imbalance learning, as well as comprehensibility enhancement.</strong></p>
+
+          
         
       
     </div>

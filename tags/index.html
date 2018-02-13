@@ -561,18 +561,14 @@
 
   <script>
     mermaidAPI.initialize({
-        startOnLoad:true
+      startOnLoad:true
     });
     $(function(){
-      // Example of using the API
-      var element = document.querySelector("#graphDiv");
-
-      var insertSvg = function(svgCode, bindFunctions){
-        element.innerHTML = svgCode;
+      const graphDefinition = 'graph TB\na-->b';
+      const cb = function(svgGraph){
+        console.log(svgGraph);
       };
-
-      var graphDefinition = 'graph TB\na-->b';
-      var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+      mermaidAPI.render('id1',graphDefinition,cb);
     });
   </script>
 

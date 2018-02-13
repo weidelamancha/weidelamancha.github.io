@@ -322,7 +322,7 @@
 
       
         
-          <h1 id="Introduction-l"><a href="#Introduction-l" class="headerlink" title="Introduction l"></a>Introduction l</h1><p>This post aims to provide an overview of ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning. </p>
+          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This post aims to provide an overview of ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning. </p>
 <p>Any ensemble method can be regarded as trying a specific way to decide the weights for combining the individual learners, and different ensemble methods can be regarded as different implementations of weighted averaging.</p>
 <p>Benefit of ensemble:</p>
 <ul>
@@ -775,18 +775,14 @@
 
   <script>
     mermaidAPI.initialize({
-        startOnLoad:true
+      startOnLoad:true
     });
     $(function(){
-      // Example of using the API
-      var element = document.querySelector("#graphDiv");
-
-      var insertSvg = function(svgCode, bindFunctions){
-        element.innerHTML = svgCode;
+      const graphDefinition = 'graph TB\na-->b';
+      const cb = function(svgGraph){
+        console.log(svgGraph);
       };
-
-      var graphDefinition = 'graph TB\na-->b';
-      var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+      mermaidAPI.render('id1',graphDefinition,cb);
     });
   </script>
 

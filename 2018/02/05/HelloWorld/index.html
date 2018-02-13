@@ -683,15 +683,15 @@
         startOnLoad:false
     });
     $(function(){
-        // Example of using the API
-        var element = document.querySelector("#graphDiv");
+      // Example of using the API
+      var element = document.querySelector("#graphDiv");
 
-        var insertSvg = function(svgCode, bindFunctions){
-            element.innerHTML = svgCode;
-        };
+      var insertSvg = function(svgCode, bindFunctions){
+        element.innerHTML = svgCode;
+      };
 
-        var graphDefinition = 'graph TB\na-->b';
-        var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+      var graphDefinition = 'graph TB\na-->b';
+      var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
     });
   </script>
 

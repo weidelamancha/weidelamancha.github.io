@@ -120,6 +120,24 @@
 
 
 
+<script src="mermaidAPI.js"></script>
+
+<script>
+    mermaidAPI.initialize({
+        startOnLoad:false
+    });
+    $(function(){
+        // Example of using the API
+        var element = document.querySelector("#graphDiv");
+
+        var insertSvg = function(svgCode, bindFunctions){
+            element.innerHTML = svgCode;
+        };
+
+        var graphDefinition = 'graph TB\na-->b';
+        var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+    });
+</script>
 
 
   <title>tags | Studies of Data (currently under construction)</title>

@@ -660,18 +660,5 @@
 
   <script src="/js/src/mermaidAPI.js"></script>
 
-  <script>
-    mermaidAPI.initialize({
-      startOnLoad:true
-    });
-    $(function(){
-      const graphDefinition = 'graph TB\na-->b';
-      const cb = function(svgGraph){
-        console.log(svgGraph);
-      };
-      mermaidAPI.render('id1',graphDefinition,cb);
-    });
-  </script>
-
 </body>
 </html>

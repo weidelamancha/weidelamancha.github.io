@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Studies of Data (currently under construction)">
 <meta property="og:description" content="IntroductionThis post aims to provide an overview of ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.  Any ensemble method">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-14T02:12:19.000Z">
+<meta property="og:updated_time" content="2018-02-14T02:20:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ensemble Techniques">
 <meta name="twitter:description" content="IntroductionThis post aims to provide an overview of ensemble (also called committee-based learning, or learning multiple classifier systems) techniques used in machine learning.  Any ensemble method">
@@ -348,9 +348,11 @@
 <h1 id="Core-knowledge-of-ensemble-methods"><a href="#Core-knowledge-of-ensemble-methods" class="headerlink" title="Core knowledge of ensemble methods"></a>Core knowledge of ensemble methods</h1><h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><p>Boosting exploits the <strong>dependence</strong> between the base learners, since the overall performance can be boosted in a <strong>residual-decreasing</strong> way. Boosting works by training a set of learners <strong>sequentially</strong> and combining them for prediction, where the later learners focus more on the mistakes of the earlier learners.</p>
 <p>General boosting procedure:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A((D_train)) --&gt; B[h1] </span><br><span class="line">	B --&gt; C&#123;e1, a1&#125;</span><br><span class="line">	C --&gt; D((D2))</span><br><span class="line">	D --&gt; E[h2]</span><br><span class="line">	E --&gt; F&#123;e2, a2&#125;</span><br><span class="line">	F --&gt; G((D3))</span><br><span class="line">	G --&gt; H[h3]</span><br><span class="line">	H --&gt; I&#123;e3, a3&#125;</span><br><span class="line">	I --&gt; J((D4))</span><br><span class="line">	B --&gt; K[H]</span><br><span class="line">	E --&gt; K</span><br><span class="line">	H --&gt; K</span><br><span class="line">	K --&gt; L((y_pred))</span><br><span class="line">	M((x_test)) --&gt; L</span><br></pre></td></tr></table></figure>
+<script src="mermaidAPI.js"></script>
+
 <script>
     mermaidAPI.initialize({
-        startOnLoad:true
+        startOnLoad:false
     });
     $(function(){
         // Example of using the API
@@ -702,6 +704,13 @@
     
 
   </div>
+
+  <div>
+
+    <script src="/js/src/mermaidAPI.js"></script>
+
+  </div>
+
 
   
 

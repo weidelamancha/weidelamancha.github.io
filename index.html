@@ -311,8 +311,7 @@
 
       
         
-          
-            <h1 id="Project-Definition"><a href="#Project-Definition" class="headerlink" title="Project Definition"></a>Project Definition</h1><h2 id="Project-overview"><a href="#Project-overview" class="headerlink" title="Project overview"></a>Project overview</h2><p>Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discount or BOGO (buy one get one free). Every offer has a validity period before the offer expires. Some users might not receive any offer during certain weeks. </p>
+          <h1 id="Project-Definition"><a href="#Project-Definition" class="headerlink" title="Project Definition"></a>Project Definition</h1><h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discount or BOGO (buy one get one free). Every offer has a validity period before the offer expires. Some users might not receive any offer during certain weeks. </p>
 <p>The data sets provided in the project contains simulated data that mimics customer behavior on the Starbucks rewards mobile app:</p>
 <p><strong>portfolio.json</strong></p>
 <ul>
@@ -338,20 +337,14 @@
 <li>time (int) - time in hours since start of test. The data begins at time t=0</li>
 <li>value - (dict of strings) - either an offer id or transaction amount depending on the record<br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-7.png" alt="transcript"></li>
 </ul>
-<h2 id="Problem-statement"><a href="#Problem-statement" class="headerlink" title="Problem statement"></a>Problem statement</h2><p>There are a lots of potentials for using the simulated data for predictions. This blog post only covers the prediction of whether an offer is required for a customer with given demographics to purchase.<br>The prediction is made with a simple neural network using <a href="https://pytorch.org/" target="_blank" rel="noopener">Pytorch</a>. Then the model is deployed using AWS lambda and API gateway, so when a customer login to the mobile app, a decistion can be made whether an offer is needed to push to this customer.<br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-8.png" alt="deployment"></p>
-<h2 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h2><h1 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h1><h2 id="Data-Exploration"><a href="#Data-Exploration" class="headerlink" title="Data Exploration"></a>Data Exploration</h2><p><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-1.png" alt="age"></p>
-<p><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-2.png" alt="gender"></p>
-<p><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-3.png" alt="income"></p>
-<p><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-4.png" alt="days since membership"></p>
-<h2 id="Data-visualization"><a href="#Data-visualization" class="headerlink" title="Data visualization"></a>Data visualization</h2><h1 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h1><h2 id="Data-preprocessing"><a href="#Data-preprocessing" class="headerlink" title="Data preprocessing"></a>Data preprocessing</h2><h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><h2 id="Refinement"><a href="#Refinement" class="headerlink" title="Refinement"></a>Refinement</h2><h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><h2 id="Model-evaluation-and-validation"><a href="#Model-evaluation-and-validation" class="headerlink" title="Model evaluation and validation"></a>Model evaluation and validation</h2><h2 id="Justification"><a href="#Justification" class="headerlink" title="Justification"></a>Justification</h2><h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h2 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h2><h2 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h2><h1 id="Deliverables"><a href="#Deliverables" class="headerlink" title="Deliverables"></a>Deliverables</h1><h2 id="Write-up-or-Application"><a href="#Write-up-or-Application" class="headerlink" title="Write-up or Application"></a>Write-up or Application</h2><h2 id="Github-Repository"><a href="#Github-Repository" class="headerlink" title="Github Repository"></a>Github Repository</h2><h2 id="Best-Practices"><a href="#Best-Practices" class="headerlink" title="Best Practices"></a>Best Practices</h2><h1 id="A-solution-statement"><a href="#A-solution-statement" class="headerlink" title="A solution statement"></a>A solution statement</h1><p>the solution proposed for the problem given;</p>
-<ul>
-<li>algorithms</li>
-<li>implementation (training and deployment)</li>
-</ul>
-<h1 id="A-benchmark-model"><a href="#A-benchmark-model" class="headerlink" title="A benchmark model"></a>A benchmark model</h1><p>some simple or historical model or result to compare the defined solution to;</p>
-<h1 id="A-set-of-evaluation-metrics"><a href="#A-set-of-evaluation-metrics" class="headerlink" title="A set of evaluation metrics"></a>A set of evaluation metrics</h1><p>functional representations for how the solution can be measured;</p>
-<h1 id="An-outline-of-the-project-design"><a href="#An-outline-of-the-project-design" class="headerlink" title="An outline of the project design"></a>An outline of the project design</h1>
-          
+<h2 id="Problem-Statement"><a href="#Problem-Statement" class="headerlink" title="Problem Statement"></a>Problem Statement</h2><p>There are a lots of potentials for using the simulated data for predictions. This blog post only covers the prediction of whether an offer is required for a customer with given demographics to purchase.<br>The prediction is made with a simple neural network using <a href="https://pytorch.org/" target="_blank" rel="noopener">PyTorch</a>. Then the model is deployed using AWS lambda and API gateway, so when a new customer login to the mobile app, a decision can be made whether an offer is needed to push to this customer depending on the member profile.<br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-8.png" alt="deployment"><br>(figure credit: Udacity)</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/22/Udacity_DataScienceEngineer_CapstoneProject/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

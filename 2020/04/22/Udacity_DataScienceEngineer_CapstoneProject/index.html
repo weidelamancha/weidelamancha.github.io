@@ -79,25 +79,26 @@
 
 
 
-<meta name="description" content="Project DefinitionProject overviewDomain backgroundthe field of research where the project is derived; Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be mer">
+<meta name="description" content="Project DefinitionProject overviewOnce every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discoun">
 <meta name="keywords" content="project">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Udacity Data Science Engineer Nano Degree Capstone Project">
 <meta property="og:url" content="http://yoursite.com/2020/04/22/Udacity_DataScienceEngineer_CapstoneProject/index.html">
 <meta property="og:site_name" content="Studies of Data Scicence">
-<meta property="og:description" content="Project DefinitionProject overviewDomain backgroundthe field of research where the project is derived; Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be mer">
+<meta property="og:description" content="Project DefinitionProject overviewOnce every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discoun">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-6.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-5.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-7.png">
+<meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-8.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-1.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-2.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-3.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-4.png">
-<meta property="og:updated_time" content="2020-04-22T11:16:45.000Z">
+<meta property="og:updated_time" content="2020-04-22T12:48:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Udacity Data Science Engineer Nano Degree Capstone Project">
-<meta name="twitter:description" content="Project DefinitionProject overviewDomain backgroundthe field of research where the project is derived; Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be mer">
+<meta name="twitter:description" content="Project DefinitionProject overviewOnce every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discoun">
 <meta name="twitter:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-6.png">
 
 
@@ -320,18 +321,33 @@
       
 
       
-        <h1 id="Project-Definition"><a href="#Project-Definition" class="headerlink" title="Project Definition"></a>Project Definition</h1><h2 id="Project-overview"><a href="#Project-overview" class="headerlink" title="Project overview"></a>Project overview</h2><p>Domain background<br>the field of research where the project is derived;</p>
-<p>Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discount or BOGO (buy one get one free). Every offer has a validity period before the offer expires. Some users might not receive any offer during certain weeks. </p>
-<p>This data set contains simulated data that mimics customer behavior on the Starbucks rewards mobile app. This transactional data also has a record for each offer that a user receives as well as a record for when a user actually views the offer. There are also records for when a user completes an offer.</p>
-<p>Not all users receive the same offer, and that is the challenge to solve with this data set.</p>
-<p>Your task is to combine transaction, demographic and offer data to determine which demographic groups respond best to which offer type. </p>
-<p><strong> Offers </strong><br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-6.png" alt="age"></p>
-<p><strong> Member Profile </strong><br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-5.png" alt="age"></p>
-<p><strong> Transactions </strong><br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-7.png" alt="age"></p>
-<h2 id="Problem-statement"><a href="#Problem-statement" class="headerlink" title="Problem statement"></a>Problem statement</h2><p>a problem being investigated for which a solution will be defined;</p>
+        <h1 id="Project-Definition"><a href="#Project-Definition" class="headerlink" title="Project Definition"></a>Project Definition</h1><h2 id="Project-overview"><a href="#Project-overview" class="headerlink" title="Project overview"></a>Project overview</h2><p>Once every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discount or BOGO (buy one get one free). Every offer has a validity period before the offer expires. Some users might not receive any offer during certain weeks. </p>
+<p>The data sets provided in the project contains simulated data that mimics customer behavior on the Starbucks rewards mobile app:</p>
+<p><strong>portfolio.json</strong></p>
 <ul>
-<li>demographic group will buy when not receiving any offers</li>
+<li>id (string) - offer id</li>
+<li>offer_type (string) - type of offer ie BOGO, discount, informational</li>
+<li>difficulty (int) - minimum required spend to complete an offer</li>
+<li>reward (int) - reward given for completing an offer</li>
+<li>duration (int) - time for offer to be open, in days</li>
+<li>channels (list of strings)<br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-6.png" alt="porfolio"></li>
 </ul>
+<p><strong>profile.json</strong></p>
+<ul>
+<li>age (int) - age of the customer</li>
+<li>became_member_on (int) - date when customer created an app account</li>
+<li>gender (str) - gender of the customer (note some entries contain ‘O’ for other rather than M or F)</li>
+<li>id (str) - customer id</li>
+<li>income (float) - customer’s income<br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-5.png" alt="profile"></li>
+</ul>
+<p><strong>transcript.json</strong></p>
+<ul>
+<li>event (str) - record description (ie transaction, offer received, offer viewed, etc.)</li>
+<li>person (str) - customer id</li>
+<li>time (int) - time in hours since start of test. The data begins at time t=0</li>
+<li>value - (dict of strings) - either an offer id or transaction amount depending on the record<br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-7.png" alt="transcript"></li>
+</ul>
+<h2 id="Problem-statement"><a href="#Problem-statement" class="headerlink" title="Problem statement"></a>Problem statement</h2><p>There are a lots of potentials for using the simulated data for predictions. This blog post only covers the prediction of whether an offer is required for a customer with given demographics to purchase.<br>The prediction is made with a simple neural network using <a href="https://pytorch.org/" target="_blank" rel="noopener">Pytorch</a>. Then the model is deployed using AWS lambda and API gateway, so when a customer login to the mobile app, a decistion can be made whether an offer is needed to push to this customer.<br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-8.png" alt="deployment"></p>
 <h2 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h2><h1 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h1><h2 id="Data-Exploration"><a href="#Data-Exploration" class="headerlink" title="Data Exploration"></a>Data Exploration</h2><p><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-1.png" alt="age"></p>
 <p><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-2.png" alt="gender"></p>
 <p><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-3.png" alt="income"></p>

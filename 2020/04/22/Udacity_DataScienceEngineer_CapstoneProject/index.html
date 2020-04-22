@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-2.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-3.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-4.png">
-<meta property="og:updated_time" content="2020-04-22T14:03:07.000Z">
+<meta property="og:updated_time" content="2020-04-22T14:29:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Udacity Data Science Engineer Nano Degree Capstone Project">
 <meta name="twitter:description" content="Project DefinitionProject OverviewOnce every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discoun">
@@ -359,16 +359,17 @@
 <p><strong>Gender</strong><br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-2.png" alt="gender"></p>
 <p><strong>Income</strong><br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-3.png" alt="income"></p>
 <p><strong>Days since membership started</strong><br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-4.png" alt="days since membership"></p>
-<h1 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h1><h2 id="Data-preprocessing"><a href="#Data-preprocessing" class="headerlink" title="Data preprocessing"></a>Data preprocessing</h2><p>Model features include age, gender (one-hot encoded), days since membership started, income), feature data are then normalized. Target is whether the customer always purchased without any offer. Data is split into training and test sets.</p>
-<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>All training and test data are uploaded to S3 bucket, and used for model training.</p>
-<h2 id="Refinement"><a href="#Refinement" class="headerlink" title="Refinement"></a>Refinement</h2><h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><h2 id="Model-evaluation-and-validation"><a href="#Model-evaluation-and-validation" class="headerlink" title="Model evaluation and validation"></a>Model evaluation and validation</h2><h2 id="Justification"><a href="#Justification" class="headerlink" title="Justification"></a>Justification</h2><h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h2 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h2><h2 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h2><h1 id="Deliverables"><a href="#Deliverables" class="headerlink" title="Deliverables"></a>Deliverables</h1><h2 id="Write-up-or-Application"><a href="#Write-up-or-Application" class="headerlink" title="Write-up or Application"></a>Write-up or Application</h2><h2 id="Github-Repository"><a href="#Github-Repository" class="headerlink" title="Github Repository"></a>Github Repository</h2><h2 id="Best-Practices"><a href="#Best-Practices" class="headerlink" title="Best Practices"></a>Best Practices</h2><h1 id="A-solution-statement"><a href="#A-solution-statement" class="headerlink" title="A solution statement"></a>A solution statement</h1><p>the solution proposed for the problem given;</p>
+<h1 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h1><h2 id="Data-preprocessing"><a href="#Data-preprocessing" class="headerlink" title="Data preprocessing"></a>Data preprocessing</h2><p>Model features include normalized age, gender (one-hot encoded), days since membership started, income data from member profile. Target to predict is whether the customer will purchased without any offer. Data is split into training and test sets.</p>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>All training and test data are uploaded to S3 bucket, and then used for model training and evaluation using neural network built with PyTorch. The binary classifier neural network is trained with Adam as optimizer and BCELoss as criterion.</p>
+<h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><h2 id="Model-evaluation"><a href="#Model-evaluation" class="headerlink" title="Model evaluation"></a>Model evaluation</h2><p>The model is evaluated using accuracy and the result on test set is 0.81, which is not too bad.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h2 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h2><p>This is a quick implementation from modeling to deployment, so only a simple prediction question is proposed and a simple model is used.</p>
+<h2 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h2><p>There are still a lot of things can be done to the modeling part, including:</p>
 <ul>
-<li>algorithms</li>
-<li>implementation (training and deployment)</li>
+<li>data engineering</li>
+<li>hyperparameter tuning</li>
+<li>adjust model evaluation metric according to business need</li>
 </ul>
-<h1 id="A-benchmark-model"><a href="#A-benchmark-model" class="headerlink" title="A benchmark model"></a>A benchmark model</h1><p>some simple or historical model or result to compare the defined solution to;</p>
-<h1 id="A-set-of-evaluation-metrics"><a href="#A-set-of-evaluation-metrics" class="headerlink" title="A set of evaluation metrics"></a>A set of evaluation metrics</h1><p>functional representations for how the solution can be measured;</p>
-<h1 id="An-outline-of-the-project-design"><a href="#An-outline-of-the-project-design" class="headerlink" title="An outline of the project design"></a>An outline of the project design</h1>
+
       
     </div>
     
@@ -394,22 +395,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/02/06/EnsembleTechniques/" rel="next" title="Ensemble Techniques">
-                <i class="fa fa-chevron-left"></i> Ensemble Techniques
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -483,7 +468,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -529,7 +514,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Project-Definition"><span class="nav-number">1.</span> <span class="nav-text">Project Definition</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Overview"><span class="nav-number">1.1.</span> <span class="nav-text">Project Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Statement"><span class="nav-number">1.2.</span> <span class="nav-text">Problem Statement</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Exploration-and-Visualization"><span class="nav-number">2.1.</span> <span class="nav-text">Data Exploration and Visualization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methodology"><span class="nav-number">3.</span> <span class="nav-text">Methodology</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-preprocessing"><span class="nav-number">3.1.</span> <span class="nav-text">Data preprocessing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementation"><span class="nav-number">3.2.</span> <span class="nav-text">Implementation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Refinement"><span class="nav-number">3.3.</span> <span class="nav-text">Refinement</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Results"><span class="nav-number">4.</span> <span class="nav-text">Results</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-evaluation-and-validation"><span class="nav-number">4.1.</span> <span class="nav-text">Model evaluation and validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Justification"><span class="nav-number">4.2.</span> <span class="nav-text">Justification</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reflection"><span class="nav-number">5.1.</span> <span class="nav-text">Reflection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improvement"><span class="nav-number">5.2.</span> <span class="nav-text">Improvement</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deliverables"><span class="nav-number">6.</span> <span class="nav-text">Deliverables</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-up-or-Application"><span class="nav-number">6.1.</span> <span class="nav-text">Write-up or Application</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github-Repository"><span class="nav-number">6.2.</span> <span class="nav-text">Github Repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Best-Practices"><span class="nav-number">6.3.</span> <span class="nav-text">Best Practices</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-solution-statement"><span class="nav-number">7.</span> <span class="nav-text">A solution statement</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-benchmark-model"><span class="nav-number">8.</span> <span class="nav-text">A benchmark model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-set-of-evaluation-metrics"><span class="nav-number">9.</span> <span class="nav-text">A set of evaluation metrics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#An-outline-of-the-project-design"><span class="nav-number">10.</span> <span class="nav-text">An outline of the project design</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Project-Definition"><span class="nav-number">1.</span> <span class="nav-text">Project Definition</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Project-Overview"><span class="nav-number">1.1.</span> <span class="nav-text">Project Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Statement"><span class="nav-number">1.2.</span> <span class="nav-text">Problem Statement</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Exploration-and-Visualization"><span class="nav-number">2.1.</span> <span class="nav-text">Data Exploration and Visualization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methodology"><span class="nav-number">3.</span> <span class="nav-text">Methodology</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-preprocessing"><span class="nav-number">3.1.</span> <span class="nav-text">Data preprocessing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementation"><span class="nav-number">3.2.</span> <span class="nav-text">Implementation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Results"><span class="nav-number">4.</span> <span class="nav-text">Results</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-evaluation"><span class="nav-number">4.1.</span> <span class="nav-text">Model evaluation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reflection"><span class="nav-number">5.1.</span> <span class="nav-text">Reflection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improvement"><span class="nav-number">5.2.</span> <span class="nav-text">Improvement</span></a></li></ol></li></ol></div>
             
 
           </div>

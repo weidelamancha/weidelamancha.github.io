@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-2.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-3.png">
 <meta property="og:image" content="http://yoursite.com/images/Udacity_DataScienceEngineer_CapstoneProject-4.png">
-<meta property="og:updated_time" content="2020-04-22T14:29:05.000Z">
+<meta property="og:updated_time" content="2020-04-22T19:16:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Udacity Data Science Engineer Nano Degree Capstone Project">
 <meta name="twitter:description" content="Project DefinitionProject OverviewOnce every few days, Starbucks sends out an offer to users of the mobile app. An offer can be merely an advertisement for a drink or an actual offer such as a discoun">
@@ -342,7 +342,7 @@
 </ul>
 <p><strong>transcript.json</strong></p>
 <ul>
-<li>event (str) - record description (ie transaction, offer received, offer viewed, etc.)</li>
+<li>event (str) - record description (i.e. transaction, offer received, offer viewed, etc.)</li>
 <li>person (str) - customer id</li>
 <li>time (int) - time in hours since start of test. The data begins at time t=0</li>
 <li>value - (dict of strings) - either an offer id or transaction amount depending on the record<br><img src="/images/Udacity_DataScienceEngineer_CapstoneProject-7.png" alt="transcript"></li>
@@ -363,11 +363,11 @@
 <h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>All training and test data are uploaded to S3 bucket, and then used for model training and evaluation using neural network built with PyTorch. The binary classifier neural network is trained with Adam as optimizer and BCELoss as criterion.</p>
 <h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><h2 id="Model-evaluation"><a href="#Model-evaluation" class="headerlink" title="Model evaluation"></a>Model evaluation</h2><p>The model is evaluated using accuracy and the result on test set is 0.81, which is not too bad.</p>
 <h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><h2 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h2><p>This is a quick implementation from modeling to deployment, so only a simple prediction question is proposed and a simple model is used.</p>
-<h2 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h2><p>There are still a lot of things can be done to the modeling part, including:</p>
+<h2 id="Improvement"><a href="#Improvement" class="headerlink" title="Improvement"></a>Improvement</h2><p>There are still a lot of other things can be done to the modeling part, including:</p>
 <ul>
 <li>data engineering</li>
 <li>hyperparameter tuning</li>
-<li>adjust model evaluation metric according to business need</li>
+<li>adjustment of model evaluation metric according to business need</li>
 </ul>
 
       
